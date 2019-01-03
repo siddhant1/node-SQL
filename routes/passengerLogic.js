@@ -3,13 +3,18 @@ const pool = new Pool({
   user: "postgres",
   host: "localhost",
   database: "passengers",
-  password: "putyourshere",
+  password: "siddhant69",
   port: 5432
 });
 
 const getAllCustomer = () => {
   return pool.query("Select * from passenger_name");
 };
+
+const getCustomer = (id) => {
+  return pool.query("Select * from passenger_name where id=$1",[id]);
+};
+
 
 const AddCustomer = (id, name) => {
   return pool.query(
@@ -20,3 +25,4 @@ const AddCustomer = (id, name) => {
 
 exports.getAllCustomer = getAllCustomer;
 exports.AddCustomer = AddCustomer;
+exports.getCustomer = getCustomer

@@ -1,0 +1,34 @@
+swagger : "2.0"
+info :  
+  version : "1.0.0"
+  title : "Passenger API"
+host: localhost:3000
+basepath: /api/
+schemes:
+- "https"
+- "http"
+consumes:
+  -application/json
+produces:
+  -application/json
+paths:
+  /passenger:
+    get:
+      tags:
+        - "passenger"
+      summary: "Get all passengers"
+      operationId: "get all passengers"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - id: "body"
+        name: "body"
+      responses:
+        405:
+          description: "Invalid input"
+        200:
+          description : "Successfully"
+          schema:
+            type : "array"
